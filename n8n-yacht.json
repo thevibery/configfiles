@@ -1,0 +1,45 @@
+[
+ {
+      "type": 1,
+      "title": "n8n",
+      "name": "n8n",
+      "description": "n8n is an extendable workflow automation tool.",
+      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/n8n.jpg",
+      "image": "n8nio/n8n:latest",
+      "categories": [
+        "Other",
+        "Tools"
+      ],
+      "env": [
+        {
+          "default": "true",
+          "label": "N8N_BASIC_AUTH_ACTIVE",
+          "name": "N8N_BASIC_AUTH_ACTIVE"
+        },
+        {
+          "default": "admin",
+          "label": "N8N_BASIC_AUTH_USER",
+          "name": "N8N_BASIC_AUTH_USER"
+        },
+        {
+          "default": "admin",
+          "label": "N8N_BASIC_AUTH_PASSWORD",
+          "name": "N8N_BASIC_AUTH_PASSWORD"
+        }
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "5678:5678/tcp"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/home/node/.n8n",
+          "bind": "/portainer/Files/AppData/Config/n8n"
+        }
+      ],
+      "note": ""
+    }
+]
